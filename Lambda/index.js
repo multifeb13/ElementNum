@@ -28,8 +28,9 @@ const  ElementNumIntentHandler = {
     if (!elementNumSlot.resolutions || elementNumSlot.resolutions.resolutionsPerAuthority[0].status.code !== 'ER_SUCCESS_MATCH') {
       speechText = `すみません、分かりませんでした。`;
     } else {
+      const elementNumSlotValue     = elementNumSlot.value;
       const elementNumSlotValueName = elementNumSlot.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-      speechText = `${elementNumSlotValueName} 番です。`;
+      speechText = `${elementNumSlotValue} は ${elementNumSlotValueName} 番です。`;
     }
     speechText += `他に何の元素番号を知りたいですか`;
 
